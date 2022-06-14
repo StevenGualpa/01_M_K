@@ -4,8 +4,12 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import  android.R.layout.*
+
 import com.google.android.material.datepicker.MaterialDatePicker
 
 
@@ -59,7 +63,8 @@ class MainActivity : AppCompatActivity() {
     //Escoge la Fecha
     fun onDateSelected(day:Int,month: Int,year: Int)
     {
-            txtfec.setText("Esxogiste tal fecha")
+            txtfec.setText("$day\\$month\\$year" )
+
     }
 
     //Agrega Items al Spinner de Etnias
@@ -137,7 +142,7 @@ class MainActivity : AppCompatActivity() {
             var d2:String =txtapellidos.text.toString()
             var d3:String =resultGeneros.toString()
             var d4:String =txtfec.text.toString()
-            var d5 :String=txttelefono.toString()
+            var d5 :String=txttelefono.text.toString()
             var d6:String=resultEtnias.toString()
 
 
@@ -150,8 +155,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("dato06", d6)
 
             startActivity(intent)
-            //println("Aqui llegamos")
-            //println(txtnombres.id.toString())
+
         }
 
     }
